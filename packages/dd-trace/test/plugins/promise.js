@@ -2,7 +2,7 @@
 
 module.exports = (name, factory) => {
   const agent = require('./agent')
-  const plugin = require(`../../packages/datadog-plugin-${name}/src`)
+  const plugin = require(`../../../datadog-plugin-${name}/src`)
 
   wrapIt()
 
@@ -26,7 +26,7 @@ module.exports = (name, factory) => {
           })
 
           beforeEach(() => {
-            const moduleExports = require(`../../versions/${name}@${version}`).get()
+            const moduleExports = require(`../../../../versions/${name}@${version}`).get()
 
             Promise = factory ? factory(moduleExports) : moduleExports
           })
