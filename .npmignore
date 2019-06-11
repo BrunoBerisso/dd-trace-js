@@ -1,6 +1,7 @@
 *
 !ext/**/*
 !lib/**/*
+!packages/*/src/**/*
 !scripts/post_install.js
 !src/**/*
 !CONTRIBUTING.md
