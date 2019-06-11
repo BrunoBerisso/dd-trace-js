@@ -1,14 +1,14 @@
 'use strict'
 
-require('../../..')
+require('../../dd-trace')
   .init({ plugins: false, sampleRate: 0 })
   .use('amqp10')
 
 const test = require('tape')
-const profile = require('../../profile')
+const profile = require('../../dd-trace/test/profile')
 
 test('amqp10 plugin should not leak', t => {
-  const amqp = require('../../../../../versions/amqp10').get()
+  const amqp = require('../../../versions/amqp10').get()
   const client = new amqp.Client()
 
   return client.connect('amqp://admin:admin@localhost:5673')

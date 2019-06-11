@@ -1,12 +1,12 @@
 'use strict'
 
-require('../../..')
+require('../../dd-trace')
   .init({ plugins: false, sampleRate: 0 })
   .use('mysql')
 
 const test = require('tape')
-const mysql = require('../../../../../versions/mysql').get()
-const profile = require('../../profile')
+const mysql = require('../../../versions/mysql').get()
+const profile = require('../../dd-trace/test/profile')
 
 test('mysql plugin should not leak', t => {
   const connection = mysql.createConnection({

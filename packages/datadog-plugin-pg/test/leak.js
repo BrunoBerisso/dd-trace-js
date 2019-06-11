@@ -1,12 +1,12 @@
 'use strict'
 
-require('../../..')
+require('../../dd-trace')
   .init({ plugins: false, sampleRate: 0 })
   .use('pg')
 
 const test = require('tape')
-const pg = require('../../../../../versions/pg').get()
-const profile = require('../../profile')
+const pg = require('../../../versions/pg').get()
+const profile = require('../../dd-trace/test/profile')
 
 test('pg plugin should not leak', t => {
   const client = new pg.Client({

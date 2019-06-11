@@ -1,12 +1,12 @@
 'use strict'
 
-require('../../..')
+require('../../dd-trace')
   .init({ plugins: false, sampleRate: 0 })
   .use('mongodb-core')
 
 const test = require('tape')
-const mongo = require('../../../../../versions/mongodb-core').get()
-const profile = require('../../profile')
+const mongo = require('../../../versions/mongodb-core').get()
+const profile = require('../../dd-trace/test/profile')
 
 test('mongodb-core plugin should not leak', t => {
   const server = new mongo.Server({

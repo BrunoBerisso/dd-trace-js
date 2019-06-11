@@ -1,12 +1,12 @@
 'use strict'
 
-require('../../..')
+require('../../dd-trace')
   .init({ plugins: false, sampleRate: 0 })
   .use('memcached')
 
 const test = require('tape')
-const Memcached = require('../../../../../versions/memcached').get()
-const profile = require('../../profile')
+const Memcached = require('../../../versions/memcached').get()
+const profile = require('../../dd-trace/test/profile')
 
 test('memcached plugin should not leak', t => {
   const memcached = new Memcached('localhost:11211', { retries: 0 })
