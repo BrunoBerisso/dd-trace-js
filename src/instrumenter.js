@@ -29,7 +29,7 @@ class Instrumenter {
     config = config || {}
 
     try {
-      this._set(require(`./plugins/${name}`), { name, config })
+      this._set(require(`../packages/datadog-plugin-${name}/src`), { name, config })
     } catch (e) {
       log.debug(`Could not find a plugin named "${name}".`)
     }

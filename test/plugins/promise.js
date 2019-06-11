@@ -2,7 +2,7 @@
 
 module.exports = (name, factory) => {
   const agent = require('./agent')
-  const plugin = require(`../../src/plugins/${name}`)
+  const plugin = require(`../../packages/datadog-plugin-${name}/src`)
 
   wrapIt()
 
