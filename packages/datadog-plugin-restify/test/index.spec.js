@@ -3,7 +3,7 @@
 const axios = require('axios')
 const getPort = require('get-port')
 const semver = require('semver')
-const agent = require('../../../test/plugins/agent')
+const agent = require('../../dd-trace/test/plugins/agent')
 const plugin = require('../src')
 
 wrapIt()
@@ -21,7 +21,7 @@ describe('Plugin', () => {
       if (semver.intersects(pkgVersion, '<5') && semver.intersects(process.version, '>6')) return
 
       beforeEach(() => {
-        tracer = require('../../..')
+        tracer = require('../../dd-trace')
         restify = require(`../../../versions/restify@${version}`).get()
       })
 

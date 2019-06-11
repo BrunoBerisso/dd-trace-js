@@ -1,7 +1,7 @@
 'use strict'
 
 const getPort = require('get-port')
-const agent = require('../../../test/plugins/agent')
+const agent = require('../../dd-trace/test/plugins/agent')
 const plugin = require('../src')
 
 wrapIt()
@@ -31,7 +31,7 @@ describe('Plugin', () => {
       return agent.load(plugin, 'net')
         .then(() => {
           net = require(`net`)
-          tracer = require('../../..')
+          tracer = require('../../dd-trace')
           parent = tracer.startSpan('parent')
           parent.finish()
 

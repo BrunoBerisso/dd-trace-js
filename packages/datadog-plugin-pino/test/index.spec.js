@@ -1,7 +1,7 @@
 'use strict'
 
 const Writable = require('stream').Writable
-const agent = require('../../../test/plugins/agent')
+const agent = require('../../dd-trace/test/plugins/agent')
 const plugin = require('../src')
 
 wrapIt()
@@ -28,7 +28,7 @@ describe('Plugin', () => {
   describe('pino', () => {
     withVersions(plugin, 'pino', version => {
       beforeEach(() => {
-        tracer = require('../../..')
+        tracer = require('../../dd-trace')
         return agent.load(plugin, 'pino')
       })
 

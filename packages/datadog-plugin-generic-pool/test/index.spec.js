@@ -1,6 +1,6 @@
 'use strict'
 
-const agent = require('../../../test/plugins/agent')
+const agent = require('../../dd-trace/test/plugins/agent')
 const plugin = require('../src')
 
 wrapIt()
@@ -12,7 +12,7 @@ describe('Plugin', () => {
 
   describe('generic-pool', () => {
     beforeEach(() => {
-      tracer = require('../../..')
+      tracer = require('../../dd-trace')
     })
 
     afterEach(() => {

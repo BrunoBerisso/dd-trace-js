@@ -1,7 +1,7 @@
 'use strict'
 
-const analyticsSampler = require('../../../src/analytics_sampler')
-const tx = require('../../../src/plugins/util/tx')
+const analyticsSampler = require('../../dd-trace/src/analytics_sampler')
+const tx = require('../../dd-trace/src/plugins/util/tx')
 
 const rrtypes = {
   resolveAny: 'ANY',

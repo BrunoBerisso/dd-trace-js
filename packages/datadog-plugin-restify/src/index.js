@@ -1,6 +1,6 @@
 'use strict'
 
-const web = require('../../../src/plugins/util/web')
+const web = require('../../dd-trace/src/plugins/util/web')
 const handlers = ['use', 'pre']
 const methods = ['del', 'get', 'head', 'opts', 'post', 'put', 'patch']
 

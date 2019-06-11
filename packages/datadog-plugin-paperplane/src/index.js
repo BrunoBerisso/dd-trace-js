@@ -1,6 +1,6 @@
 'use strict'
 
-const web = require('../../../src/plugins/util/web')
+const web = require('../../dd-trace/src/plugins/util/web')
 
 const traceRoute = handler => req => {
   const { original, route } = req

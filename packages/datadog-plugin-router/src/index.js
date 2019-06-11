@@ -2,7 +2,7 @@
 
 const METHODS = require('methods').concat('all')
 const pathToRegExp = require('path-to-regexp')
-const web = require('../../../src/plugins/util/web')
+const web = require('../../dd-trace/src/plugins/util/web')
 
 function createWrapHandle (tracer, config) {
   return function wrapHandle (handle) {

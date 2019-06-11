@@ -1,6 +1,6 @@
 'use strict'
 
-const tx = require('../../../src/plugins/util/redis')
+const tx = require('../../dd-trace/src/plugins/util/redis')
 
 function createWrapInternalSendCommand (tracer, config) {
   return function wrapInternalSendCommand (internalSendCommand) {

@@ -1,6 +1,6 @@
 'use strict'
 
-const tx = require('../../../src/plugins/util/log')
+const tx = require('../../dd-trace/src/plugins/util/log')
 
 function createWrapWrite (tracer, config) {
   return function wrapWrite (write) {

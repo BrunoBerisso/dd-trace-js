@@ -5,8 +5,8 @@
 const axios = require('axios')
 const http = require('http')
 const getPort = require('get-port')
-const agent = require('../../../test/plugins/agent')
-const web = require('../../../src/plugins/util/web')
+const agent = require('../../dd-trace/test/plugins/agent')
+const web = require('../../dd-trace/src/plugins/util/web')
 const plugin = require('../src')
 
 wrapIt()
@@ -34,7 +34,7 @@ describe('Plugin', () => {
   describe('router', () => {
     withVersions(plugin, 'router', version => {
       beforeEach(() => {
-        tracer = require('../../..')
+        tracer = require('../../dd-trace')
       })
 
       afterEach(() => {

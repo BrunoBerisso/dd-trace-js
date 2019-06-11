@@ -1,6 +1,6 @@
 'use strict'
 
-const tx = require('../../../src/plugins/util/tx')
+const tx = require('../../dd-trace/src/plugins/util/tx')
 
 function createWrapInnerExecute (tracer, config) {
   return function wrapInnerExecute (_innerExecute) {

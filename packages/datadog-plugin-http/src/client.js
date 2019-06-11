@@ -3,13 +3,13 @@
 const url = require('url')
 const semver = require('semver')
 const opentracing = require('opentracing')
-const log = require('../../../src/log')
-const constants = require('../../../src/constants')
+const log = require('../../dd-trace/src/log')
+const constants = require('../../dd-trace/src/constants')
 const tags = require('../../../ext/tags')
 const kinds = require('../../../ext/kinds')
 const formats = require('../../../ext/formats')
-const urlFilter = require('../../../src/plugins/util/urlfilter')
-const analyticsSampler = require('../../../src/analytics_sampler')
+const urlFilter = require('../../dd-trace/src/plugins/util/urlfilter')
+const analyticsSampler = require('../../dd-trace/src/analytics_sampler')
 
 const Reference = opentracing.Reference
 

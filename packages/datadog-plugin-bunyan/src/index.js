@@ -1,6 +1,6 @@
 'use strict'
 
-const tx = require('../../../src/plugins/util/log')
+const tx = require('../../dd-trace/src/plugins/util/log')
 
 function createWrapEmit (tracer, config) {
   return function wrapEmit (emit) {

@@ -4,7 +4,7 @@ const axios = require('axios')
 const getPort = require('get-port')
 const http = require('http')
 
-const agent = require('../../../test/plugins/agent')
+const agent = require('../../dd-trace/test/plugins/agent')
 const plugin = require('../src')
 
 wrapIt()
@@ -31,7 +31,7 @@ describe('Plugin', () => {
   describe('paperplane', () => {
     withVersions(plugin, 'paperplane', version => {
       beforeEach(() => {
-        tracer = require('../../..')
+        tracer = require('../../dd-trace')
       })
 
       afterEach(() => {

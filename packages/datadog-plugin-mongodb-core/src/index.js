@@ -1,7 +1,7 @@
 'use strict'
 
 const Buffer = require('safe-buffer').Buffer
-const analyticsSampler = require('../../../src/analytics_sampler')
+const analyticsSampler = require('../../dd-trace/src/analytics_sampler')
 
 function createWrapOperation (tracer, config, operationName) {
   return function wrapOperation (operation) {

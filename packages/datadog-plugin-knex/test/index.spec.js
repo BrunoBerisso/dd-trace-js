@@ -2,7 +2,7 @@
 
 // TODO: fix tests failing when re-running in watch mode
 
-const agent = require('../../../test/plugins/agent')
+const agent = require('../../dd-trace/test/plugins/agent')
 const plugin = require('../src')
 
 wrapIt()
@@ -15,7 +15,7 @@ describe('Plugin', () => {
   describe('knex', () => {
     withVersions(plugin, 'knex', version => {
       beforeEach(() => {
-        tracer = require('../../..')
+        tracer = require('../../dd-trace')
       })
 
       afterEach(() => {

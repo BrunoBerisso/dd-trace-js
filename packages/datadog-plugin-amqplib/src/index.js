@@ -1,7 +1,7 @@
 'use strict'
 
 const kebabCase = require('lodash.kebabcase')
-const analyticsSampler = require('../../../src/analytics_sampler')
+const analyticsSampler = require('../../dd-trace/src/analytics_sampler')
 
 let methods = {}
 

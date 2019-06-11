@@ -1,6 +1,6 @@
 'use strict'
 
-const tx = require('../../../src/plugins/util/promise')
+const tx = require('../../dd-trace/src/plugins/util/promise')
 
 module.exports = [
   {

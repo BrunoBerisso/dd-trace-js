@@ -3,7 +3,7 @@
 const axios = require('axios')
 const getPort = require('get-port')
 const semver = require('semver')
-const agent = require('../../../test/plugins/agent')
+const agent = require('../../dd-trace/test/plugins/agent')
 const plugin = require('../src')
 
 wrapIt()
@@ -18,7 +18,7 @@ describe('Plugin', () => {
   describe('hapi', () => {
     withVersions(plugin, 'hapi', version => {
       beforeEach(() => {
-        tracer = require('../../..')
+        tracer = require('../../dd-trace')
         handler = (request, h, body) => h.response ? h.response(body) : h(body)
       })
 

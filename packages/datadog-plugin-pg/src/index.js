@@ -1,7 +1,7 @@
 'use strict'
 
 const Tags = require('opentracing').Tags
-const analyticsSampler = require('../../../src/analytics_sampler')
+const analyticsSampler = require('../../dd-trace/src/analytics_sampler')
 
 const OPERATION_NAME = 'pg.query'
 

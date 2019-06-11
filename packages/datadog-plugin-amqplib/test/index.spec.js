@@ -1,6 +1,6 @@
 'use strict'
 
-const agent = require('../../../test/plugins/agent')
+const agent = require('../../dd-trace/test/plugins/agent')
 const plugin = require('../src')
 
 wrapIt()
@@ -13,7 +13,7 @@ describe('Plugin', () => {
   describe('amqplib', () => {
     withVersions(plugin, 'amqplib', version => {
       beforeEach(() => {
-        tracer = require('../../..')
+        tracer = require('../../dd-trace')
       })
 
       afterEach(() => {

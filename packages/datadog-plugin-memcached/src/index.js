@@ -1,6 +1,6 @@
 'use strict'
 
-const analyticsSampler = require('../../../src/analytics_sampler')
+const analyticsSampler = require('../../dd-trace/src/analytics_sampler')
 
 function createWrapCommand (tracer, config) {
   return function wrapCommand (command) {

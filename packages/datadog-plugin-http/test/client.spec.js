@@ -1,7 +1,7 @@
 'use strict'
 
 const getPort = require('get-port')
-const agent = require('../../../test/plugins/agent')
+const agent = require('../../dd-trace/test/plugins/agent')
 const semver = require('semver')
 const fs = require('fs')
 const path = require('path')
@@ -37,7 +37,7 @@ describe('Plugin', () => {
 
       beforeEach(() => {
         plugin = require('../src/client')
-        tracer = require('../../..')
+        tracer = require('../../dd-trace')
         appListener = null
       })
 

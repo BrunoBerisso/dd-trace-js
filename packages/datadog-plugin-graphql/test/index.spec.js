@@ -1,6 +1,6 @@
 'use strict'
 
-const agent = require('../../../test/plugins/agent')
+const agent = require('../../dd-trace/test/plugins/agent')
 const plugin = require('../src')
 
 wrapIt()
@@ -165,7 +165,7 @@ describe('Plugin', () => {
         before(() => {
           return agent.load(plugin, 'graphql')
             .then(() => {
-              tracer = require('../../..')
+              tracer = require('../../dd-trace')
               graphql = require(`../../../versions/graphql@${version}`).get()
               buildSchema()
             })
@@ -984,7 +984,7 @@ describe('Plugin', () => {
 
       describe('with configuration', () => {
         before(() => {
-          tracer = require('../../..')
+          tracer = require('../../dd-trace')
 
           return agent.load(plugin, 'graphql', {
             service: 'test',
@@ -1043,7 +1043,7 @@ describe('Plugin', () => {
 
       describe('with an array of variable names', () => {
         before(() => {
-          tracer = require('../../..')
+          tracer = require('../../dd-trace')
 
           return agent.load(plugin, 'graphql', {
             variables: ['title']
@@ -1082,7 +1082,7 @@ describe('Plugin', () => {
 
       describe('with a depth of 0', () => {
         before(() => {
-          tracer = require('../../..')
+          tracer = require('../../dd-trace')
 
           return agent.load(plugin, 'graphql', { depth: 0 })
         })
@@ -1153,7 +1153,7 @@ describe('Plugin', () => {
 
       describe('with a depth >=1', () => {
         before(() => {
-          tracer = require('../../..')
+          tracer = require('../../dd-trace')
 
           return agent.load(plugin, 'graphql', { depth: 2 })
         })
@@ -1205,7 +1205,7 @@ describe('Plugin', () => {
 
       describe('with collapsing disabled', () => {
         before(() => {
-          tracer = require('../../..')
+          tracer = require('../../dd-trace')
 
           return agent.load(plugin, 'graphql', { collapse: false })
         })
@@ -1259,7 +1259,7 @@ describe('Plugin', () => {
 
       describe('with signature calculation disabled', () => {
         before(() => {
-          tracer = require('../../..')
+          tracer = require('../../dd-trace')
 
           return agent.load(plugin, 'graphql', { signature: false })
         })
@@ -1296,7 +1296,7 @@ describe('Plugin', () => {
         let makeExecutableSchema
 
         before(() => {
-          tracer = require('../../..')
+          tracer = require('../../dd-trace')
 
           return agent.load(plugin, 'graphql')
             .then(() => {

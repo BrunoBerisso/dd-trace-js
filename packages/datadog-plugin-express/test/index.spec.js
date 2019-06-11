@@ -2,7 +2,7 @@
 
 const axios = require('axios')
 const getPort = require('get-port')
-const agent = require('../../../test/plugins/agent')
+const agent = require('../../dd-trace/test/plugins/agent')
 const plugin = require('../src')
 
 wrapIt()
@@ -17,7 +17,7 @@ describe('Plugin', () => {
   describe('express', () => {
     withVersions(plugin, 'express', version => {
       beforeEach(() => {
-        tracer = require('../../..')
+        tracer = require('../../dd-trace')
       })
 
       afterEach(() => {

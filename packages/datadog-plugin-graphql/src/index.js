@@ -1,9 +1,9 @@
 'use strict'
 
 const pick = require('lodash.pick')
-const platform = require('../../../src/platform')
-const log = require('../../../src/log')
-const analyticsSampler = require('../../../src/analytics_sampler')
+const platform = require('../../dd-trace/src/platform')
+const log = require('../../dd-trace/src/log')
+const analyticsSampler = require('../../dd-trace/src/analytics_sampler')
 
 let tools
 

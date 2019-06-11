@@ -1,6 +1,6 @@
 'use strict'
 
-const assertPromise = require('../../../test/plugins/promise')
+const assertPromise = require('../../dd-trace/test/plugins/promise')
 
 assertPromise('when', when => {
   return function Promise (executor) {

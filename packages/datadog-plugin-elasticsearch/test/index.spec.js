@@ -1,6 +1,6 @@
 'use strict'
 
-const agent = require('../../../test/plugins/agent')
+const agent = require('../../dd-trace/test/plugins/agent')
 const plugin = require('../src')
 
 wrapIt()
@@ -12,7 +12,7 @@ describe('Plugin', () => {
   withVersions(plugin, ['elasticsearch', '@elastic/elasticsearch'], (version, moduleName) => {
     describe('elasticsearch', () => {
       beforeEach(() => {
-        tracer = require('../../..')
+        tracer = require('../../dd-trace')
       })
 
       describe('without configuration', () => {

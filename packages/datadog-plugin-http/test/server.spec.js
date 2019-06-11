@@ -1,7 +1,7 @@
 'use strict'
 
 const getPort = require('get-port')
-const agent = require('../../../test/plugins/agent')
+const agent = require('../../dd-trace/test/plugins/agent')
 const axios = require('axios')
 
 wrapIt()
@@ -18,7 +18,7 @@ describe('Plugin', () => {
   describe('http/server', () => {
     beforeEach(() => {
       plugin = require('../src/server')
-      tracer = require('../../..')
+      tracer = require('../../dd-trace')
       listener = (req, res) => {
         app && app(req, res)
         res.writeHead(200)

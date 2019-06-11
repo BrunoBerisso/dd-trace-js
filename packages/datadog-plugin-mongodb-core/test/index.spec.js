@@ -1,7 +1,7 @@
 'use strict'
 
 const semver = require('semver')
-const agent = require('../../../test/plugins/agent')
+const agent = require('../../dd-trace/test/plugins/agent')
 const Buffer = require('safe-buffer').Buffer
 const plugin = require('../src')
 
@@ -17,8 +17,8 @@ describe('Plugin', () => {
   describe('mongodb-core', () => {
     withVersions(plugin, 'mongodb-core', version => {
       beforeEach(() => {
-        platform = require('../../../src/platform')
-        tracer = require('../../..')
+        platform = require('../../dd-trace/src/platform')
+        tracer = require('../../dd-trace')
 
         collection = platform.id().toString()
       })

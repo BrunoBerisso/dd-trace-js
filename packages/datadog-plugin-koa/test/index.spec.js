@@ -2,7 +2,7 @@
 
 const axios = require('axios')
 const getPort = require('get-port')
-const agent = require('../../../test/plugins/agent')
+const agent = require('../../dd-trace/test/plugins/agent')
 const plugin = require('../src')
 
 wrapIt()
@@ -19,7 +19,7 @@ describe('Plugin', () => {
       let port
 
       beforeEach(() => {
-        tracer = require('../../..')
+        tracer = require('../../dd-trace')
         Koa = require(`../../../versions/koa@${version}`).get()
         return getPort().then(newPort => {
           port = newPort

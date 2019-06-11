@@ -1,7 +1,7 @@
 'use strict'
 
-const tx = require('../../../src/plugins/util/tx')
-const analyticsSampler = require('../../../src/analytics_sampler')
+const tx = require('../../dd-trace/src/plugins/util/tx')
+const analyticsSampler = require('../../dd-trace/src/analytics_sampler')
 
 function createWrapConnect (tracer, config) {
   return function wrapConnect (connect) {
