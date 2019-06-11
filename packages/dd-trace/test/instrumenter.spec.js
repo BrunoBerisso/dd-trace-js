@@ -56,9 +56,9 @@ describe('Instrumenter', () => {
         'express-mock': integrations.express,
         'mysql-mock': integrations.mysql
       },
-      '../packages/datadog-plugin-http/src': integrations.http,
-      '../packages/datadog-plugin-express-mock/src': integrations.express,
-      '../packages/datadog-plugin-mysql-mock/src': integrations.mysql
+      '../../datadog-plugin-http/src': integrations.http,
+      '../../datadog-plugin-express-mock/src': integrations.express,
+      '../../datadog-plugin-mysql-mock/src': integrations.mysql
     })
 
     instrumenter = new Instrumenter(tracer)
