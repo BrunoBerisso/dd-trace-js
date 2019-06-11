@@ -1,7 +1,7 @@
 'use strict'
 
 const RetryOperation = require('../operation')
-const redis = require('../../../versions/redis').get()
+const redis = require('../../../../../versions/redis').get()
 
 function waitForRedis () {
   return new Promise((resolve, reject) => {

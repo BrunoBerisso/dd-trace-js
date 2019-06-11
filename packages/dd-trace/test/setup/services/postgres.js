@@ -1,7 +1,7 @@
 'use strict'
 
 const RetryOperation = require('../operation')
-const pg = require('../../../versions/pg').get()
+const pg = require('../../../../../versions/pg').get()
 
 function waitForPostgres () {
   return new Promise((resolve, reject) => {

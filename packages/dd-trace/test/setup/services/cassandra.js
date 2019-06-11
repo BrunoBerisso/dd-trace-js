@@ -1,7 +1,7 @@
 'use strict'
 
 const RetryOperation = require('../operation')
-const cassandra = require('../../../versions/cassandra-driver').get()
+const cassandra = require('../../../../../versions/cassandra-driver').get()
 
 function waitForCassandra () {
   return new Promise((resolve, reject) => {
