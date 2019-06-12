@@ -18,8 +18,8 @@
     "test": "SERVICES=* yarn services && NO_DEPRECATION=* cov8 --include \"src/**/*.js\" -- mocha --exit 'packages/dd-trace/test/setup/all.js' 'test/**/*.spec.js'",
     "test:core": "mocha --exit --file packages/dd-trace/test/setup/core.js \"packages/dd-trace/test/**/*.spec.js\"",
     "test:plugins": "yarn services && NO_DEPRECATION=* cov8 --include \"packages/*/src/**/*.js\" -- mocha --exit --file \"packages/dd-trace/test/setup/all.js\" \"packages/datadog-plugin-@($(echo $PLUGINS))/test/**/*.spec.js\"",
-    "leak:core": "node ./scripts/install_plugin_modules && (cd packages/datadog-memwatch && yarn) && NODE_PATH=./packages/datadog-memwatch/node_modules node --no-warnings ./node_modules/.bin/tape 'packages/dd-trace/test/leak/**/*.js'",
-    "leak:plugins": "yarn services && (cd packages/datadog-memwatch && yarn) && NODE_PATH=./packages/datadog-memwatch/node_modules node --no-warnings ./node_modules/.bin/tape \"packages/datadog-plugin-@($(echo $PLUGINS))/test/leak.js\""
+    "leak:core": "node ./scripts/install_plugin_modules && (cd packages/memwatch && yarn) && NODE_PATH=./packages/memwatch/node_modules node --no-warnings ./node_modules/.bin/tape 'packages/dd-trace/test/leak/**/*.js'",
+    "leak:plugins": "yarn services && (cd packages/memwatch && yarn) && NODE_PATH=./packages/memwatch/node_modules node --no-warnings ./node_modules/.bin/tape \"packages/datadog-plugin-@($(echo $PLUGINS))/test/leak.js\""
   },
   "repository": {
     "type": "git",
