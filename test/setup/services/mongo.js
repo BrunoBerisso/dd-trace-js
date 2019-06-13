@@ -8,19 +8,19 @@ function waitForMongo () {
     const operation = new RetryOperation('mongo')
 
     operation.attempt(currentAttempt => {
-      // const server = new mongo.ReplSet([{
-      //   host: 'localhost',
-      //   port: 27017
-      // }], {
-      //   setName: 'replicaset',
-      //   reconnect: false
-      // })
-
-      const server = new mongo.Server({
+      const server = new mongo.ReplSet([{
         host: 'localhost',
-        port: 27017,
+        port: 27017
+      }], {
+        setName: 'replicaset',
         reconnect: false
       })
+
+      // const server = new mongo.Server({
+      //   host: 'localhost',
+      //   port: 27017,
+      //   reconnect: false
+      // })
 
       server.on('connect', server => {
         server.destroy()

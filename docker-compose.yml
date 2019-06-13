@@ -16,9 +16,17 @@ services:
     ports:
       - "127.0.0.1:6379:6379"
   mongo:
-    image: circleci/mongo
+    image: bitnami/mongodb:4
+    environment:
+      - MONGODB_PRIMARY_HOST=localhost
+      - MONGODB_ADVERTISED_HOSTNAME=localhost
+      - MONGODB_REPLICA_SET_MODE=primary
+      # - MONGO_INITDB_ROOT_USERNAME=
+      # - MONGO_INITDB_ROOT_PASSWORD=
+      # - MONGODB_ROOT_PASSWORD=password123
+      # - MONGODB_REPLICA_SET_KEY=replicasetkey123
     ports:
-      - "127.0.0.1:27017:27017"
+      - "27017:27017"
   elasticsearch:
     image: docker.elastic.co/elasticsearch/elasticsearch-oss:6.2.4
     environment:
